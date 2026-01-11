@@ -1,0 +1,1311 @@
+{
+  "version": 2,
+  "scopes": {
+    "691fce2fa95b9b19e25004b1::691548f5d144703317a4599e": {
+      "id": "root",
+      "name": "Another work Collection",
+      "type": "folder",
+      "children": [
+        {
+          "id": "083f598a-2965-4a68-8073-3e1f48694dba",
+          "type": "folder",
+          "name": "Deck Demo API",
+          "children": [
+            {
+              "id": "eb5566c0-60fe-49e0-b289-63005d8c403e",
+              "type": "folder",
+              "name": "General",
+              "children": [
+                {
+                  "id": "1ccd4d15-9b84-4c2a-9e4b-a57d2552b47c",
+                  "type": "api",
+                  "name": "Ping",
+                  "method": "GET",
+                  "url": "https://jsonplaceholder.typicode.com/ping",
+                  "headers": [],
+                  "query": [],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {}
+                }
+              ]
+            },
+            {
+              "id": "fb2338df-f60b-483a-8374-fd809ca8522a",
+              "type": "folder",
+              "name": "Users",
+              "children": [
+                {
+                  "id": "46c3190a-0fed-4793-98c2-458718258804",
+                  "type": "api",
+                  "name": "List users",
+                  "method": "GET",
+                  "url": "https://jsonplaceholder.typicode.com/users",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": ""
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {}
+                },
+                {
+                  "id": "774b99d1-9f54-4924-b96c-383a574b1a7a",
+                  "type": "api",
+                  "name": "Create user",
+                  "method": "POST",
+                  "url": "https://jsonplaceholder.typicode.com/users",
+                  "headers": [],
+                  "query": [],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "json",
+                  "body": {
+                    "json": {
+                      "name": "Jane Doe",
+                      "email": "jane@example.com"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "db3b3b08-41f3-49ba-a42e-979b48924a83",
+          "type": "folder",
+          "name": "Aviation Radiation API",
+          "children": [
+            {
+              "id": "16065420-a160-4a96-b93a-a76a191d72fc",
+              "type": "folder",
+              "name": "cari7",
+              "children": [
+                {
+                  "id": "abfc08b9-2b2e-42eb-ac93-e38c4a839f6e",
+                  "type": "api",
+                  "name": "The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "summary": "The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "description": "The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields. \nUse this endpoint if you are comparing model predictions to measurements.\n",
+                  "operationId": "app.api_cari7.endpoints.CARI7.ambient_dose",
+                  "tags": [
+                    "cari7"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1cari7~1ambient_dose/get"
+                  },
+                  "method": "GET",
+                  "url": "/cari7/ambient_dose",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).",
+                      "required": true
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "",
+                      "description": "Latitude. -90 (S) to 90 (N).",
+                      "required": true
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "",
+                      "description": "Longitude. -180 (W) to 180 (E).",
+                      "required": true
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    },
+                    {
+                      "key": "utc",
+                      "value": "",
+                      "description": "Hour in 24 hour time.",
+                      "required": true
+                    },
+                    {
+                      "key": "particle",
+                      "value": "",
+                      "description": "The particle type as a string. Specifying 'total' returns the dose for all particle types.\n",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful dose calculation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "dose rate": {
+                            "units": "uSv/hr",
+                            "value": 2.322303291477743
+                          }
+                        },
+                        "properties": {
+                          "dose rate": {
+                            "properties": {
+                              "units": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "dose rate": {
+                          "units": "uSv/hr",
+                          "value": 2.322303291477743
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "7ca8b045-98dc-4088-a2f7-5f8fee6a0bc9",
+                  "type": "api",
+                  "name": "The effective dose rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "summary": "The effective dose rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "description": "Effective Dose is a radiation protection quantity defined by the International Commission on\n Radiological Protection (ICRP) and represents the stochastic health\n risk to the human body at low levels of radiation.\nIt accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation.\nUse this endpoint if you need to estimate radiation exposures of personnel.\n",
+                  "operationId": "app.api_cari7.endpoints.CARI7.effective_dose",
+                  "tags": [
+                    "cari7"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1cari7~1effective_dose/get"
+                  },
+                  "method": "GET",
+                  "url": "/cari7/effective_dose",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).",
+                      "required": true
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "",
+                      "description": "Latitude. -90 (S) to 90 (N).",
+                      "required": true
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "",
+                      "description": "Longitude. -180 (W) to 180 (E).",
+                      "required": true
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    },
+                    {
+                      "key": "utc",
+                      "value": "",
+                      "description": "Hour in 24 hour time.",
+                      "required": true
+                    },
+                    {
+                      "key": "particle",
+                      "value": "",
+                      "description": "The particle type as a string. Specifying 'total' returns the dose for all particle types.\n",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful dose calculation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "dose rate": {
+                            "units": "uSv/hr",
+                            "value": 2.1532952875056712
+                          }
+                        },
+                        "properties": {
+                          "dose rate": {
+                            "properties": {
+                              "units": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "dose rate": {
+                          "units": "uSv/hr",
+                          "value": 2.1532952875056712
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "9208cec7-e10f-4de0-ae3e-5a50b1b655c6",
+              "type": "folder",
+              "name": "parma",
+              "children": [
+                {
+                  "id": "933492e7-52e6-427d-8d37-fbdb155cb1b3",
+                  "type": "api",
+                  "name": "The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "summary": "The ambient dose equivalent rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "description": "The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields. \nUse this endpoint if you are comparing model predictions to measurements.\n",
+                  "operationId": "app.api_parma.endpoints.PARMA.ambient_dose",
+                  "tags": [
+                    "parma"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1parma~1ambient_dose/get"
+                  },
+                  "method": "GET",
+                  "url": "/parma/ambient_dose",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).",
+                      "required": false
+                    },
+                    {
+                      "key": "atmospheric_depth",
+                      "value": "",
+                      "description": "Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.\n",
+                      "required": false
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "",
+                      "description": "Latitude. -90 (S) to 90 (N).",
+                      "required": true
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "",
+                      "description": "Longitude. -180 (W) to 180 (E).",
+                      "required": true
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    },
+                    {
+                      "key": "particle",
+                      "value": "",
+                      "description": "The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.\n",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful dose read operation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "dose rate": {
+                            "units": "uSv/hr",
+                            "value": 0.26835067168474125
+                          }
+                        },
+                        "properties": {
+                          "dose rate": {
+                            "properties": {
+                              "units": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "dose rate": {
+                          "units": "uSv/hr",
+                          "value": 0.26835067168474125
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "c3cfc8ce-92c5-4920-bac9-99c3c08661bc",
+                  "type": "api",
+                  "name": "The energy differential intensity of a particle at a given zenith angle.",
+                  "summary": "The energy differential intensity of a particle at a given zenith angle.",
+                  "description": "The differential intensity of a particle is a directional quantity that describes the number of particles per unit area, per unit solid angle, per unit energy, and per unit time. The API leverages the functionality of PARMA to calculate differential intensity distributions with energies in units of MeV and Intensity in units of /cm2/sr/MeV/s.\n",
+                  "operationId": "app.api_parma.endpoints.PARMA.differential_intensity",
+                  "tags": [
+                    "parma"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1parma~1differential_intensity/get"
+                  },
+                  "method": "GET",
+                  "url": "/parma/differential_intensity",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).",
+                      "required": false
+                    },
+                    {
+                      "key": "atmospheric_depth",
+                      "value": "",
+                      "description": "Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.\n",
+                      "required": false
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "",
+                      "description": "Latitude. -90 (S) to 90 (N).",
+                      "required": true
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "",
+                      "description": "Longitude. -180 (W) to 180 (E).",
+                      "required": true
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    },
+                    {
+                      "key": "particle",
+                      "value": "",
+                      "description": "The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.\n",
+                      "required": true
+                    },
+                    {
+                      "key": "angle",
+                      "value": "",
+                      "description": "Direction cosine. 1.0 is in the downward direction.",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful read of intensity operation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "energies": {
+                            "data": [
+                              10.592537251772889,
+                              11.885022274370186,
+                              13.335214321633243,
+                              14.96235656094434,
+                              16.78804018122561,
+                              18.836490894898017,
+                              21.134890398366483,
+                              23.71373705661657,
+                              26.60725059798812,
+                              29.853826189179625,
+                              33.4965439157828,
+                              37.583740428844465,
+                              42.16965034285828,
+                              47.31512589614811,
+                              53.08844442309891,
+                              59.56621435290114,
+                              66.83439175686158,
+                              74.98942093324571,
+                              84.13951416451967,
+                              94.40608762859253,
+                              105.92537251772909,
+                              118.85022274370202,
+                              133.35214321633254,
+                              149.62356560944343,
+                              167.88040181225605,
+                              188.36490894898,
+                              211.34890398366454,
+                              237.1373705661653,
+                              266.0725059798806,
+                              298.5382618917954,
+                              334.9654391578269,
+                              375.83740428844317,
+                              421.69650342858097,
+                              473.1512589614788,
+                              530.8844442309862,
+                              595.662143529008,
+                              668.3439175686115,
+                              749.894209332452,
+                              841.3951416451905,
+                              944.0608762859177,
+                              1059.2537251772821,
+                              1188.5022274370106,
+                              1333.5214321633146,
+                              1496.2356560944222,
+                              1678.804018122547,
+                              1883.6490894897847,
+                              2113.4890398366283,
+                              2371.3737056616337,
+                              2660.725059798784,
+                              2985.38261891793,
+                              3349.6543915782418,
+                              3758.374042884401,
+                              4216.965034285775,
+                              4731.512589614749,
+                              5308.84444230982,
+                              5956.621435290031,
+                              6683.4391756860605,
+                              7498.942093324459,
+                              8413.951416451835,
+                              9440.6087628591,
+                              10592.537251772736,
+                              11885.022274370007,
+                              13335.214321633035,
+                              14962.356560944098,
+                              16788.04018122533,
+                              18836.49089489769,
+                              21134.890398366108,
+                              23713.737056616137,
+                              26607.250597987622,
+                              29853.82618917905,
+                              33496.543915782146,
+                              37583.74042884371,
+                              42169.65034285741,
+                              47315.12589614711,
+                              53088.44442309776,
+                              59566.21435289981,
+                              66834.39175686006,
+                              74989.42093324398,
+                              84139.51416451768,
+                              94406.08762859023
+                            ],
+                            "units": "MeV"
+                          },
+                          "intensities": {
+                            "data": [
+                              0.000015126557258481497,
+                              0.00001599438328728434,
+                              0.00001689468409778281,
+                              0.00001782700110028125,
+                              0.000018789989894315395,
+                              0.000019781312921179226,
+                              0.00002079773698769471,
+                              0.000021835319990199245,
+                              0.00002288931588809045,
+                              0.000023953698331015904,
+                              0.000025020740419725837,
+                              0.00002608079723261754,
+                              0.00002712202346190026,
+                              0.000028129941429425255,
+                              0.000029086999403906575,
+                              0.000029972245159538348,
+                              0.00003076112412042979,
+                              0.00003142535794905927,
+                              0.000031932955656189876,
+                              0.000032248618858073125,
+                              0.000032334985958519275,
+                              0.000032155208240777106,
+                              0.000031677197295996437,
+                              0.000030879552903400744,
+                              0.000029726220825502388,
+                              0.000028234425803141926,
+                              0.00002650516406182499,
+                              0.000024602269634120444,
+                              0.000022594819983033717,
+                              0.000020552475431477016,
+                              0.00001853662594721251,
+                              0.000016596094572091987,
+                              0.00001476576885147725,
+                              0.000013067285256001253,
+                              0.000011511187862538484,
+                              0.000010100122716208363,
+                              0.00000883240101591408,
+                              0.000007703733932387032,
+                              0.00000670576631351448,
+                              0.000005822881145729626,
+                              0.000005046340372076868,
+                              0.000004369966582442526,
+                              0.000003781202020752834,
+                              0.0000032689518931964352,
+                              0.0000028234311080639376,
+                              0.000002436034648930342,
+                              0.0000020992258398508115,
+                              0.0000018064235849092022,
+                              0.0000015518898432506667,
+                              0.000001331051662285105,
+                              0.0000011394488995132188,
+                              9.726057340258263e-7,
+                              8.265824310558272e-7,
+                              6.998212586927555e-7,
+                              5.894224376580005e-7,
+                              4.93568138996158e-7,
+                              4.116922090268701e-7,
+                              3.460236317178158e-7,
+                              3.037548828699797e-7,
+                              2.9135185653116735e-7,
+                              2.82520391784604e-7,
+                              2.3785220594554244e-7,
+                              1.7791153699257012e-7,
+                              1.2924247345559558e-7,
+                              9.48243126183575e-8,
+                              7.043455232978242e-8,
+                              5.2623996885656347e-8,
+                              3.935459373084662e-8,
+                              2.939334162588793e-8,
+                              2.1909771678801793e-8,
+                              1.6297871509147514e-8,
+                              1.2099955678192665e-8,
+                              8.967477745797399e-9,
+                              6.635335072413951e-9,
+                              4.902621621420823e-9,
+                              3.6176621571186638e-9,
+                              2.6663515657204105e-9,
+                              1.963121398302903e-9,
+                              1.4439864047128638e-9,
+                              1.0612233263106733e-9
+                            ],
+                            "units": "/cm2/s/sr/MeV"
+                          }
+                        },
+                        "properties": {
+                          "energies": {
+                            "properties": {
+                              "data": {
+                                "items": {
+                                  "type": "number"
+                                },
+                                "type": "array"
+                              },
+                              "units": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "intensities": {
+                            "properties": {
+                              "data": {
+                                "items": {
+                                  "type": "number"
+                                },
+                                "type": "array"
+                              },
+                              "units": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "energies": {
+                          "data": [
+                            10.592537251772889,
+                            11.885022274370186,
+                            13.335214321633243,
+                            14.96235656094434,
+                            16.78804018122561,
+                            18.836490894898017,
+                            21.134890398366483,
+                            23.71373705661657,
+                            26.60725059798812,
+                            29.853826189179625,
+                            33.4965439157828,
+                            37.583740428844465,
+                            42.16965034285828,
+                            47.31512589614811,
+                            53.08844442309891,
+                            59.56621435290114,
+                            66.83439175686158,
+                            74.98942093324571,
+                            84.13951416451967,
+                            94.40608762859253,
+                            105.92537251772909,
+                            118.85022274370202,
+                            133.35214321633254,
+                            149.62356560944343,
+                            167.88040181225605,
+                            188.36490894898,
+                            211.34890398366454,
+                            237.1373705661653,
+                            266.0725059798806,
+                            298.5382618917954,
+                            334.9654391578269,
+                            375.83740428844317,
+                            421.69650342858097,
+                            473.1512589614788,
+                            530.8844442309862,
+                            595.662143529008,
+                            668.3439175686115,
+                            749.894209332452,
+                            841.3951416451905,
+                            944.0608762859177,
+                            1059.2537251772821,
+                            1188.5022274370106,
+                            1333.5214321633146,
+                            1496.2356560944222,
+                            1678.804018122547,
+                            1883.6490894897847,
+                            2113.4890398366283,
+                            2371.3737056616337,
+                            2660.725059798784,
+                            2985.38261891793,
+                            3349.6543915782418,
+                            3758.374042884401,
+                            4216.965034285775,
+                            4731.512589614749,
+                            5308.84444230982,
+                            5956.621435290031,
+                            6683.4391756860605,
+                            7498.942093324459,
+                            8413.951416451835,
+                            9440.6087628591,
+                            10592.537251772736,
+                            11885.022274370007,
+                            13335.214321633035,
+                            14962.356560944098,
+                            16788.04018122533,
+                            18836.49089489769,
+                            21134.890398366108,
+                            23713.737056616137,
+                            26607.250597987622,
+                            29853.82618917905,
+                            33496.543915782146,
+                            37583.74042884371,
+                            42169.65034285741,
+                            47315.12589614711,
+                            53088.44442309776,
+                            59566.21435289981,
+                            66834.39175686006,
+                            74989.42093324398,
+                            84139.51416451768,
+                            94406.08762859023
+                          ],
+                          "units": "MeV"
+                        },
+                        "intensities": {
+                          "data": [
+                            0.000015126557258481497,
+                            0.00001599438328728434,
+                            0.00001689468409778281,
+                            0.00001782700110028125,
+                            0.000018789989894315395,
+                            0.000019781312921179226,
+                            0.00002079773698769471,
+                            0.000021835319990199245,
+                            0.00002288931588809045,
+                            0.000023953698331015904,
+                            0.000025020740419725837,
+                            0.00002608079723261754,
+                            0.00002712202346190026,
+                            0.000028129941429425255,
+                            0.000029086999403906575,
+                            0.000029972245159538348,
+                            0.00003076112412042979,
+                            0.00003142535794905927,
+                            0.000031932955656189876,
+                            0.000032248618858073125,
+                            0.000032334985958519275,
+                            0.000032155208240777106,
+                            0.000031677197295996437,
+                            0.000030879552903400744,
+                            0.000029726220825502388,
+                            0.000028234425803141926,
+                            0.00002650516406182499,
+                            0.000024602269634120444,
+                            0.000022594819983033717,
+                            0.000020552475431477016,
+                            0.00001853662594721251,
+                            0.000016596094572091987,
+                            0.00001476576885147725,
+                            0.000013067285256001253,
+                            0.000011511187862538484,
+                            0.000010100122716208363,
+                            0.00000883240101591408,
+                            0.000007703733932387032,
+                            0.00000670576631351448,
+                            0.000005822881145729626,
+                            0.000005046340372076868,
+                            0.000004369966582442526,
+                            0.000003781202020752834,
+                            0.0000032689518931964352,
+                            0.0000028234311080639376,
+                            0.000002436034648930342,
+                            0.0000020992258398508115,
+                            0.0000018064235849092022,
+                            0.0000015518898432506667,
+                            0.000001331051662285105,
+                            0.0000011394488995132188,
+                            9.726057340258263e-7,
+                            8.265824310558272e-7,
+                            6.998212586927555e-7,
+                            5.894224376580005e-7,
+                            4.93568138996158e-7,
+                            4.116922090268701e-7,
+                            3.460236317178158e-7,
+                            3.037548828699797e-7,
+                            2.9135185653116735e-7,
+                            2.82520391784604e-7,
+                            2.3785220594554244e-7,
+                            1.7791153699257012e-7,
+                            1.2924247345559558e-7,
+                            9.48243126183575e-8,
+                            7.043455232978242e-8,
+                            5.2623996885656347e-8,
+                            3.935459373084662e-8,
+                            2.939334162588793e-8,
+                            2.1909771678801793e-8,
+                            1.6297871509147514e-8,
+                            1.2099955678192665e-8,
+                            8.967477745797399e-9,
+                            6.635335072413951e-9,
+                            4.902621621420823e-9,
+                            3.6176621571186638e-9,
+                            2.6663515657204105e-9,
+                            1.963121398302903e-9,
+                            1.4439864047128638e-9,
+                            1.0612233263106733e-9
+                          ],
+                          "units": "/cm2/s/sr/MeV"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "37abea1e-6601-4e94-aafc-434685b21f75",
+                  "type": "api",
+                  "name": "The effective dose rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "summary": "The effective dose rate calculated for a single particle type, or accumulated over all particle types.\n",
+                  "description": "Effective dose is a radiation protection quantity defined by the International Commission on Radiological Protection (ICRP) and represents the stochastic health risk to the human body at low levels of radiation. It accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation.\nUse this endpoint if you need to estimate radiation exposures of personnel.\n",
+                  "operationId": "app.api_parma.endpoints.PARMA.effective_dose",
+                  "tags": [
+                    "parma"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1parma~1effective_dose/get"
+                  },
+                  "method": "GET",
+                  "url": "/parma/effective_dose",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).",
+                      "required": false
+                    },
+                    {
+                      "key": "atmospheric_depth",
+                      "value": "",
+                      "description": "Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.\n",
+                      "required": false
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "",
+                      "description": "Latitude. -90 (S) to 90 (N).",
+                      "required": true
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "",
+                      "description": "Longitude. -180 (W) to 180 (E).",
+                      "required": true
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    },
+                    {
+                      "key": "particle",
+                      "value": "",
+                      "description": "The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.\n",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful dose read operation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "dose rate": {
+                            "units": "uSv/hr",
+                            "value": 1.9456004308224644
+                          }
+                        },
+                        "properties": {
+                          "dose rate": {
+                            "properties": {
+                              "units": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "dose rate": {
+                          "units": "uSv/hr",
+                          "value": 1.9456004308224644
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "74fc0bce-37f3-40db-b357-a43053ad8b6e",
+              "type": "folder",
+              "name": "routedose",
+              "children": [
+                {
+                  "id": "587f3572-22b0-469c-89a0-4f3e35db48c6",
+                  "type": "api",
+                  "name": "Calculate the ambient equivalent dose along a great circle flight route.\n",
+                  "summary": "Calculate the ambient equivalent dose along a great circle flight route.\n",
+                  "description": "The ambient dose equivalent, H*(10), is an operational quantity that simulates the  human body by measuring the dose equivalent at a depth of 10 mm within a tissue  equivalent sphere of 300 mm diameter. It is a measurable quantity that is  used to calibrate area monitors (radiation detectors) for mixed radiation fields.  <br> <br> Use this endpoint if you are comparing model predictions to measurements. <br> <br> This API can run in two modes: <br> <br> Either specify <br> <b>altitude</b>, <b>duration</b><br> for constant altitude calculations; <br> <br> Or specify <br> <b>initial_altitude</b>, <b>cruising_altitudes</b>, <b>climb_times</b>, <b>cruising_times</b>, <b>descent_time</b>, <b>final_altitude</b><br> to calculate dose accounting for a step climb. <br> <br> Note: the airport codes or coordinates (depending on which was specified), and the date in DD/MM/YYYY format, are echoed in the json response as strings.\n",
+                  "operationId": "app.api_icaro.endpoints.ICARO.ambient_dose",
+                  "tags": [
+                    "routedose"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1route~1ambient_dose/get"
+                  },
+                  "method": "GET",
+                  "url": "/route/ambient_dose",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "origin",
+                      "value": "",
+                      "description": "The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.",
+                      "required": true
+                    },
+                    {
+                      "key": "destination",
+                      "value": "",
+                      "description": "The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.",
+                      "required": true
+                    },
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 20 km.",
+                      "required": false
+                    },
+                    {
+                      "key": "duration",
+                      "value": "",
+                      "description": "The flight duration in hours. The minimum is 0, the maximum is 20 hrs.",
+                      "required": false
+                    },
+                    {
+                      "key": "initial_altitude",
+                      "value": "",
+                      "description": "Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.",
+                      "required": false
+                    },
+                    {
+                      "key": "cruising_altitudes",
+                      "value": "",
+                      "description": "Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.",
+                      "required": false
+                    },
+                    {
+                      "key": "climb_times",
+                      "value": "",
+                      "description": "Climb times for each cruising altitude (hours).",
+                      "required": false
+                    },
+                    {
+                      "key": "cruising_times",
+                      "value": "",
+                      "description": "Cruising times at each cruising altitude (hours).",
+                      "required": false
+                    },
+                    {
+                      "key": "descent_time",
+                      "value": "",
+                      "description": "Descent time from last cruising altitude to final altitude (hours).",
+                      "required": false
+                    },
+                    {
+                      "key": "final_altitude",
+                      "value": "",
+                      "description": "Final altitude (in km).",
+                      "required": false
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful dose calculation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "dose": {
+                            "date": "21/05/2019",
+                            "destination": "33.94250107,-118.4079971",
+                            "origin": "YSSY",
+                            "units": "uSv",
+                            "value": 10.911498908287665
+                          }
+                        },
+                        "properties": {
+                          "dose": {
+                            "properties": {
+                              "date": {
+                                "type": "string"
+                              },
+                              "destination": {
+                                "type": "string"
+                              },
+                              "origin": {
+                                "type": "string"
+                              },
+                              "units": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "dose": {
+                          "date": "21/05/2019",
+                          "destination": "33.94250107,-118.4079971",
+                          "origin": "YSSY",
+                          "units": "uSv",
+                          "value": 10.911498908287665
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "c42cc0ea-798b-46d9-a097-77244de074ba",
+                  "type": "api",
+                  "name": "Calculate the total effective dose along a great circle flight route.\n",
+                  "summary": "Calculate the total effective dose along a great circle flight route.\n",
+                  "description": "Effective Dose is a radiation protection quantity defined by the International Commission on\n Radiological Protection (ICRP) and represents the stochastic health\n risk to the human body at low levels of radiation.\nIt accounts for the different sensitivities of organs to ionising radiation, as well as the different effectiveness of various types of radiation. <br> <br> Use this endpoint if you need to estimate radiation exposures of personnel. <br> <br> This API can run in two modes: <br> <br> Either specify <br> <b>altitude</b>, <b>duration</b><br> for constant altitude calculations; <br> <br> Or specify <br> <b>initial_altitude</b>, <b>cruising_altitudes</b>, <b>climb_times</b>, <b>cruising_times</b>, <b>descent_time</b>, <b>final_altitude</b><br> to calculate dose accounting for a step climb. <br> <br> Note: the airport codes or coordinates (depending on which was specified), and the date in DD/MM/YYYY format, are echoed in the json response as strings.\n",
+                  "operationId": "app.api_icaro.endpoints.ICARO.effective_dose",
+                  "tags": [
+                    "routedose"
+                  ],
+                  "sourceRef": {
+                    "type": "openapi",
+                    "specPath": "openapi/aviation-radiation-api.json",
+                    "pointer": "#/paths/~1route~1effective_dose/get"
+                  },
+                  "method": "GET",
+                  "url": "/route/effective_dose",
+                  "headers": [],
+                  "query": [
+                    {
+                      "key": "origin",
+                      "value": "",
+                      "description": "The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.",
+                      "required": true
+                    },
+                    {
+                      "key": "destination",
+                      "value": "",
+                      "description": "The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.",
+                      "required": true
+                    },
+                    {
+                      "key": "altitude",
+                      "value": "",
+                      "description": "Altitude (in km). The minimum is 0 m, the maximum is 20 km.",
+                      "required": false
+                    },
+                    {
+                      "key": "duration",
+                      "value": "",
+                      "description": "The flight duration in hours. The minimum is 0, the maximum is 20 hrs.",
+                      "required": false
+                    },
+                    {
+                      "key": "initial_altitude",
+                      "value": "",
+                      "description": "Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.",
+                      "required": false
+                    },
+                    {
+                      "key": "cruising_altitudes",
+                      "value": "",
+                      "description": "Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.",
+                      "required": false
+                    },
+                    {
+                      "key": "climb_times",
+                      "value": "",
+                      "description": "Climb times for each cruising altitude (hours).",
+                      "required": false
+                    },
+                    {
+                      "key": "cruising_times",
+                      "value": "",
+                      "description": "Cruising times at each cruising altitude (hours).",
+                      "required": false
+                    },
+                    {
+                      "key": "descent_time",
+                      "value": "",
+                      "description": "Descent time from last cruising altitude to final altitude (hours).",
+                      "required": false
+                    },
+                    {
+                      "key": "final_altitude",
+                      "value": "",
+                      "description": "Final altitude (in km).",
+                      "required": false
+                    },
+                    {
+                      "key": "year",
+                      "value": "",
+                      "description": "Year in YYYY.",
+                      "required": true
+                    },
+                    {
+                      "key": "month",
+                      "value": "",
+                      "description": "Month in MM.",
+                      "required": true
+                    },
+                    {
+                      "key": "day",
+                      "value": "",
+                      "description": "Day in DD.",
+                      "required": true
+                    }
+                  ],
+                  "cookies": [],
+                  "pathParams": [],
+                  "bodyType": "none",
+                  "body": {},
+                  "responses": [
+                    {
+                      "status": "200",
+                      "description": "Successful dose calculation",
+                      "contentType": "application/json",
+                      "schema": {
+                        "example": {
+                          "dose": {
+                            "date": "21/05/2019",
+                            "destination": "33.94250107,-118.4079971",
+                            "origin": "YSSY",
+                            "units": "uSv",
+                            "value": 9.90406659800017
+                          }
+                        },
+                        "properties": {
+                          "dose": {
+                            "properties": {
+                              "date": {
+                                "type": "string"
+                              },
+                              "destination": {
+                                "type": "string"
+                              },
+                              "origin": {
+                                "type": "string"
+                              },
+                              "units": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "example": {
+                        "dose": {
+                          "date": "21/05/2019",
+                          "destination": "33.94250107,-118.4079971",
+                          "origin": "YSSY",
+                          "units": "uSv",
+                          "value": 9.90406659800017
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
