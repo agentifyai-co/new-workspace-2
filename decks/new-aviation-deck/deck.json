@@ -1,0 +1,72 @@
+{
+      "id": "parma-dose-calculator",
+      "title": "Parma Atmospheric Radiation Calculator",
+      "version": "0.1.0",
+      "uiEntryPath": "src/App.tsx",
+      "endpoints": [
+        "933492e7-52e6-427d-8d37-fbdb155cb1b3",
+        "37abea1e-6601-4e94-aafc-434685b21f75",
+        "c3cfc8ce-92c5-4920-bac9-99c3c08661bc"
+      ],
+      "steps": [
+        {
+          "id": "getAmbientDose",
+          "title": "Calculate Ambient Dose",
+          "inputs": [
+            { "name": "altitude", "type": "number", "label": "Altitude (km)", "required": true, "defaultValue": 10 },
+            { "name": "atmospheric_depth", "type": "number", "label": "Atmospheric Depth (g/cm^2)", "required": false },
+            { "name": "latitude", "type": "number", "label": "Latitude", "required": true, "defaultValue": 51.5 },
+            { "name": "longitude", "type": "number", "label": "Longitude", "required": true, "defaultValue": -0.12 },
+            { "name": "year", "type": "number", "label": "Year", "required": true, "defaultValue": 2024 },
+            { "name": "month", "type": "number", "label": "Month", "required": true, "defaultValue": 5 }
+          ],
+          "action": {
+            "endpointRef": "933492e7-52e6-427d-8d37-fbdb155cb1b3",
+            "params": {
+              "query.altitude": "input.altitude",
+              "query.atmospheric_depth": "input.atmospheric_depth",
+              "query.latitude": "input.latitude",
+              "query.longitude": "input.longitude",
+              "query.year": "input.year",
+              "query.month": "input.month"
+            },
+            "mode": "live"
+          },
+          "output": { "type": "json", "select": "response" }
+        },
+        {
+          "id": "getEffectiveDose",
+          "title": "Calculate Effective Dose",
+          "action": {
+            "endpointRef": "37abea1e-6601-4e94-aafc-434685b21f75",
+            "params": {
+              "query.altitude": "input.altitude",
+              "query.atmospheric_depth": "input.atmospheric_depth",
+              "query.latitude": "input.latitude",
+              "query.longitude": "input.longitude",
+              "query.year": "input.year",
+              "query.month": "input.month"
+            },
+            "mode": "live"
+          },
+          "output": { "type": "json", "select": "response" }
+        },
+        {
+          "id": "getDifferentialIntensity",
+          "title": "Calculate Differential Intensity",
+          "action": {
+            "endpointRef": "c3cfc8ce-92c5-4920-bac9-99c3c08661bc",
+            "params": {
+              "query.altitude": "input.altitude",
+              "query.atmospheric_depth": "input.atmospheric_depth",
+              "query.latitude": "input.latitude",
+              "query.longitude": "input.longitude",
+              "query.year": "input.year",
+              "query.month": "input.month"
+            },
+            "mode": "live"
+          },
+          "output": { "type": "json", "select": "response" }
+        }
+      ]
+    }
